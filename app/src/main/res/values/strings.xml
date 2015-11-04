@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Pronto</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_registrar">Registrar</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="error_invalid_email">Endereço de email invalido</string>
+    <string name="error_invalid_password">Esse password é muita curta</string>
+    <string name="error_incorrect_password">Esse password esta incorreta</string>
+    <string name="error_field_required">Esse campo é obrigatório</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."  </string>
+    <string name="nome">"Nome"</string>
+    <string name="cpf">"CPF"</string>
+    <string name="nascimento">"Data Nascimento"</string>
+    <string name="genero">"Sexo"</string>
+    <string name="radBtMasculino">"Masculino"</string>
+    <string name="radBtFeminino">"Feminino"</string>
+    <string name="email">"Email"</string>
+    <string name="senha">"Senha"</string>
+    <string name="app_id">"1513247955657956"</string>
+
+
+
+</resources>
