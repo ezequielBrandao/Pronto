@@ -21,7 +21,49 @@
     <string name="email">"Email"</string>
     <string name="senha">"Senha"</string>
     <string name="app_id">"1513247955657956"</string>
+    <string name="title_activity_usuario">UsuarioActivity</string>
+    <string name="title_activity_servico_lista">Serviços</string>
 
+    <string name="tituloServicoLista">Serviços</string>
+    <string name="title_activity_usuario_form">UsuarioForm</string>
+    <string name="title_activity_servico_form">ServicoForm</string>
+
+
+    <string name="tituloUsuarioForm">Dados do Usuario</string>
+
+    <string name="fotoUsuarioDesc">Foto do Usuario</string>
+
+    <!--<string name="nome">Nome</string>-->
+    <string name="nomeUsuarioHint">Nome</string>
+    <string name="fone">Telefone</string>
+    <string name="foneUsuarioHint">Telefone</string>
+    <string name="site">Site</string>
+    <string name="siteHint">www.exemplo.com.br</string>
+    <!--<string name="email">Email</string>-->
+    <string name="emailHint">E-mail (Opicional)</string>
+    <string name="endereco">Endereço</string>
+    <string name="enderecoHint">rua, número, bairro</string>
+
+    <string name="salvarDados">Cadastrar</string>
+
+    <string name="title_activity_Usuario_lista">Usuarios</string>
+
+    <string name="novo">Novo</string>
+    <string name="mapa">Mapa</string>
+    <string name="mais_opcoes">Mais opcões</string>
+    <string name="enviarDados">Enviar Dados</string>
+    <string name="disciplinas">Receber Dados</string>
+    <string name="preferencias">Preferências</string>
+
+    <string name="ligar">Ligar</string>
+    <string name="enviarSMS">Enviar SMS</string>
+    <string name="verNoMapa">Ver no Mapa</string>
+    <string name="navegarSite">Navegar no Site</string>
+    <string name="enviarEmail">Enviar E-mail</string>
+    <string name="excluir">Excluir</string>
+    <string name="title_activity_usuario_list">UsuarioList</string>
+    <string name="title_activity_profissional">ProfissionalActivity</string>
+    <string name="title_activity_usuario_detalhe">UsuarioDetalheActivity</string>
 
 
 </resources>
