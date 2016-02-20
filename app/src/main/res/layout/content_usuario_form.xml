@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_usuario_form"
+    tools:context="br.com.servicofacil.activity.form.UsuarioForm">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radioTipoUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/tipoUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usuário"/>
+
+            <RadioButton
+                android:id="@+id/tipoProfissional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profissional"
+                android:layout_toRightOf="@+id/tipoUsuario">
+                <requestFocus />
+            </RadioButton>
+
+        </RadioGroup>
+
+
+
+        <EditText
+            android:id="@+id/edNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/nomeUsuarioHint"
+            android:gravity="center">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/edCep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Cep"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/edDataNascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="Data de Nascimento"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/edEndereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Endereço"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/edCpf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="CPF"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/edSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Senha"
+            android:gravity="center"/>
+
+
+        <EditText
+            android:id="@+id/edEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emailHint"
+            android:inputType="textEmailAddress"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/edTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Telefone"
+            android:inputType="phone"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/tvProfissao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Qual profissão você atua?"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/edServico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Profissão"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvDisponibilidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dias da semana disponível"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/edDisponibilidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Segunda, terça..."
+            android:inputType="text"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvInserirFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inserir Foto"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_no_image"
+            android:contentDescription="@string/fotoUsuarioDesc" />
+
+        <TextView
+            android:id="@+id/tvCompetencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Competências Adicionais"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/edCompetencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Fale um pouco sobre seu trabalho, cursos, certificações e experiências."
+            android:inputType="text"
+            android:gravity="center"/>
+
+
+        <Button
+            android:id="@+id/btSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/salvarDados"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

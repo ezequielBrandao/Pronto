@@ -199,6 +199,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 .build();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mGoogleApiClient.disconnect();
+    }
+
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
             return;
@@ -416,17 +428,22 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     public void onConnectionFailed(ConnectionResult connectionResult) {
-        if(mIsResolving && mShouldResolve){
-            if(connectionResult.hasResolution()){
+        if (!mIsResolving && mShouldResolve) {
+            if (connectionResult.hasResolution()) {
                 try {
                     connectionResult.startResolutionForResult(this, RC_SING_IN);
                     mIsResolving = true;
                 } catch (IntentSender.SendIntentException e) {
-                    e.printStackTrace();
                     mIsResolving = false;
                     mGoogleApiClient.connect();
                 }
+            } else {
+
+               // showErrorDialog(connectionResult);
             }
+        } else {
+            // Show the signed-out UI
+            //showSignedOutUI();
         }
     }
 

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_usuario_detalhe"
+    tools:context="br.com.servicofacil.activity.form.UsuarioDetalheActivity">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/itemUsuarioLayoutFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_no_image" />
+
+        <TextView
+            android:id="@+id/itemUsuarioLayoutNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15.56sp"
+            android:textStyle="bold"
+            android:text="Maria S. Lima 35  anos - Manaus Rua José Ribas Centro"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/itemCompetenciasAdicionais"
+            android:layout_alignStart="@+id/itemCompetenciasAdicionais"
+            android:layout_alignRight="@+id/itemCompetenciasAdicionais"
+            android:layout_alignEnd="@+id/itemCompetenciasAdicionais"
+            android:layout_alignBottom="@+id/avaliacao" />
+
+        <RatingBar
+            android:id="@+id/avaliacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:isIndicator="true"
+            style="@style/foodRatingBar"
+            android:rating="5"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="60dp"
+            android:layout_marginEnd="60dp" />
+        <!--android:layout_alignTop="@+id/itemUsuarioLayoutNome"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"-->
+
+        <TextView
+            android:id="@+id/itemCompetenciasAdicionais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13.3sp"
+            android:text="Competências adicionais:"
+            android:textStyle="bold"
+            android:layout_below="@+id/itemUsuarioLayoutFoto"
+            android:layout_alignLeft="@+id/itemUsuarioLayoutDescricao"
+            android:layout_alignStart="@+id/itemUsuarioLayoutDescricao" />
+        <TextView
+            android:id="@+id/itemUsuarioLayoutDescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13.3sp"
+            android:textStyle="italic"
+            android:text="Descrição das cmpetências pelo usuário que irá se cadastrar, como uma forma de mostrar mais seu trabalho."
+            android:layout_toLeftOf="@+id/avaliacao"
+            android:layout_toRightOf="@+id/itemUsuarioLayoutFoto"
+            android:layout_toEndOf="@+id/itemUsuarioLayoutFoto"
+            android:layout_below="@+id/itemCompetenciasAdicionais" />
+
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">-->
+
+            <ImageView
+                android:id="@+id/iconeLigar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:padding="5dp"
+                android:src="@drawable/botao_ligar"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/itemUsuarioLayoutDescricao"
+                android:layout_toEndOf="@+id/itemUsuarioLayoutDescricao"
+                android:layout_below="@+id/itemUsuarioLayoutDescricao"/>
+
+            <ImageView
+                android:id="@+id/iconeComentar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/botao_comentar"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/iconeLigar"
+                android:layout_toEndOf="@+id/iconeLigar"
+                android:layout_below="@+id/itemUsuarioLayoutDescricao"/>
+            <ImageView
+                android:id="@+id/iconeFavoritar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/botao_favoritar"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/iconeComentar"
+                android:layout_toEndOf="@+id/iconeComentar"
+                android:layout_below="@+id/itemUsuarioLayoutDescricao"/>
+            <ImageView
+                android:id="@+id/iconeAvaliar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/botao_avaliar"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/iconeFavoritar"
+                android:layout_toEndOf="@+id/iconeFavoritar"
+                android:layout_below="@+id/itemUsuarioLayoutDescricao"/>
+
+        <!--</RelativeLayout>-->
+
+        <ListView
+            android:id="@+id/lvComentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iconeLigar"
+            >
+
+        </ListView>
+
+    </RelativeLayout>
+</ScrollView>

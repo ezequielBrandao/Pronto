@@ -205,7 +205,7 @@ public class UsuarioDetalheActivity extends AppCompatActivity {
                 Toast.makeText(this, "O item receber foi clicado", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.menuItemPreferencias:
-                Toast.makeText(this, "O item preferencias foi clicado", Toast.LENGTH_SHORT).show(); 
+                Toast.makeText(this, "O item preferencias foi clicado", Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
         }

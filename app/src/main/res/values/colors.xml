@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorDirista">#03A9F4</color>
+    <color name="colorPedreiro">#F34235</color>
+    <color name="colorEletricista">#FFC107</color>
+    <color name="colorBaba">#9B26AF</color>
+    <color name="colorCuidador">#CCDB38</color>
+    <color name="colorMecanico">#FF5722</color>
+
+
 </resources>

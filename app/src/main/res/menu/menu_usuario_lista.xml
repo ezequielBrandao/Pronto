@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UsuarioList">
+    <!--Criação de Menus-->
+    <item
+        android:id="@+id/menuItemNovo"
+
+        app:showAsAction="ifRoom"
+        android:orderInCategory="1"
+        android:title="@string/novo" />
+
+    <item
+        android:id="@+id/menuItemMapa"
+
+        app:showAsAction="ifRoom"
+        android:orderInCategory="2"
+        android:title="@string/mapa"/>
+
+    <!--Criação de Submenus-->
+    <item
+
+        app:showAsAction="ifRoom"
+        android:orderInCategory="3"
+        android:title="@string/mais_opcoes">
+        <menu>
+            <item
+                android:id="@+id/menuItemEnviar"
+
+                app:showAsAction="ifRoom"
+                android:title="@string/enviarDados"/>
+            <item
+                android:id="@+id/menuItemReceber"
+
+                app:showAsAction="ifRoom"
+                android:title="@string/disciplinas"/>
+            <item
+                android:id="@+id/menuItemPreferencias"
+
+                app:showAsAction="ifRoom"
+                android:title="@string/preferencias"/>
+        </menu>
+    </item>
+</menu>
