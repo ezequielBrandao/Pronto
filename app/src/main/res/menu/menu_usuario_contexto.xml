@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
+
+
+    <!--<TextView
+        android:id="@+id/tvCompetencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Competências Adicionais"
+        android:textStyle="bold"
+        android:gravity="center"/>-->
+
+    <EditText
+        android:id="@+id/edComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Comentario"
+        android:inputType="text"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btEnviarComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnEnviarComentario"
+        android:gravity="center"/>
+    <!--<item
         android:id="@+id/itemMenuContextoLigar"
         android:title="@string/ligar"/>
     <item
@@ -17,5 +42,5 @@
         android:title="@string/enviarEmail"/>
     <item
         android:id="@+id/itemMenuContextoExcluir"
-        android:title="@string/excluir"/>
+        android:title="@string/excluir"/>-->
 </menu>
