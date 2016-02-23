@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/usuarioFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:src="@drawable/ic_no_image"
+        android:contentDescription="Usuario Profissional"/>
+
+    <TextView
+        android:id="@+id/usuarioNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15.56sp"
+        android:textStyle="bold"
+        android:text="Nome do Usuario"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/usuarioFoto"
+        android:layout_toEndOf="@+id/usuarioFoto" />
+
+    <RatingBar
+        android:id="@+id/usuarioRanking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:isIndicator="true"
+        style="@style/foodRatingBar"
+        android:rating="5"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/usuarioNome"
+        android:layout_toEndOf="@+id/usuarioNome"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_above="@+id/usuarioCidadeBairro" />
+
+    <TextView
+        android:id="@+id/usuarioIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="37 anos - "
+        android:layout_below="@+id/usuarioNome"
+        android:layout_toRightOf="@+id/usuarioFoto"
+        android:layout_toEndOf="@+id/usuarioFoto" />
+
+    <TextView
+        android:id="@+id/usuarioCidadeBairro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Manaus - Centro"
+        android:layout_below="@+id/usuarioNome"
+        android:layout_toRightOf="@+id/usuarioIdade"
+        android:layout_toEndOf="@+id/usuarioIdade" />
+
+
+</RelativeLayout>
