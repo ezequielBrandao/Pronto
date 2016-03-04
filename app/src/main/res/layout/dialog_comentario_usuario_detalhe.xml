@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+            android:id="@+id/edComentario"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:ems="100"
+            android:hint="Insira o comentário"
+            android:inputType="text"
+            android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/btEnviarComentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnEnviarComentario"
+            android:gravity="center"
+            android:layout_below="@+id/edComentario"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>

@@ -27,6 +27,8 @@ import br.com.servicofacil.activity.form.UsuarioForm;
 import br.com.servicofacil.adpter.UsuarioProfissionalListaAdapter;
 import br.com.servicofacil.model.bean.Servico;
 import br.com.servicofacil.model.bean.Usuario;
+import br.com.servicofacil.model.dao.ComentarioDAO;
+import br.com.servicofacil.model.dao.ServicoDAO;
 import br.com.servicofacil.model.dao.UsuarioDAO;
 import br.com.servicofacil.servicofacil.R;
 

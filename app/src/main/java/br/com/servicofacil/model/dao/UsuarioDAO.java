@@ -22,6 +22,8 @@ public class UsuarioDAO extends SQLiteOpenHelper {
 
     private static int VERSAO = 1;
     private static String TABELA = "Usuario";
+    private static String TABELASERVICO = "Servico";
+    private static String TABELACOMENTARIO = "Comentario";
     private static String BANCO_DE_DADOS = "Pronto";
 
     private static String TAG_LOGCAT = "USUARIO-DAO";
@@ -43,6 +45,21 @@ public class UsuarioDAO extends SQLiteOpenHelper {
         //Execução do comanddo SQL
         db.execSQL(ddl);
         Log.i(TAG_LOGCAT, "Criação da tabela: "+TABELA);
+
+        ddl = "CREATE TABLE "+TABELASERVICO +" ( " +
+                " id INTEGER PRIMARY KEY, " +
+                " nomeServico TEXT, descricao TEXT, imagem TEXT)";
+        //Execução da instrução no SQLite
+        db.execSQL(ddl);
+        Log.i(TAG_LOGCAT, "Criação da tabela: " + TABELASERVICO);
+
+
+        ddl = "CREATE TABLE "+ TABELACOMENTARIO+" (" +
+                " id INTEGER PRIMARY KEY, " +
+                " id_comentador LONG, id_comentado LONG, comentario TEXT)";
+        //Execução do comanddo SQL
+        db.execSQL(ddl);
+        Log.i(TAG_LOGCAT, "Criação da tabela: "+TABELACOMENTARIO);
     }
 
     @Override
@@ -219,6 +236,11 @@ public class UsuarioDAO extends SQLiteOpenHelper {
         if(tipoUsuario==false)
             find=0;
         else find=1;
+        /*Usuario user = new Usuario();
+        user.setId(8761l);
+        user.setNome("Cristiane Ronaldiane");
+        user.setTipoUsuario(false);
+        this.cadastrar(user);*/
 
             //Definição da instrução SQL
             String sql = "Select * from " + TABELA + " where tipo_usuario = "+find;

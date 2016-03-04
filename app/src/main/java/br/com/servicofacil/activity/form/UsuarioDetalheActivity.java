@@ -2,6 +2,7 @@ package br.com.servicofacil.activity.form;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,9 +20,11 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RatingBar;
@@ -36,8 +39,10 @@ import java.util.List;
 
 import br.com.servicofacil.helper.UsuarioDetalheHelper;
 import br.com.servicofacil.helper.UsuarioHelper;
+import br.com.servicofacil.model.bean.Comentario;
 import br.com.servicofacil.model.bean.Servico;
 import br.com.servicofacil.model.bean.Usuario;
+import br.com.servicofacil.model.dao.ComentarioDAO;
 import br.com.servicofacil.model.dao.UsuarioDAO;
 import br.com.servicofacil.servicofacil.R;
 
@@ -64,7 +69,7 @@ public class UsuarioDetalheActivity extends AppCompatActivity {
         setContentView(R.layout.activity_usuario_detalhe);
         Servico servico = (Servico)getIntent().getSerializableExtra("SERVICO_SELECIONADO");
         definirToolbar(servico);
-        Usuario usuario = (Usuario)getIntent().getSerializableExtra("USUARIO_SELECIONADO");
+        final Usuario usuario = (Usuario)getIntent().getSerializableExtra("USUARIO_SELECIONADO");
         usuarioLogin = (Usuario)getIntent().getSerializableExtra("USUARIO_LOGADO");
 
         helper = new UsuarioDetalheHelper(this);
@@ -96,39 +101,46 @@ public class UsuarioDetalheActivity extends AppCompatActivity {
         bmp = Bitmap.createScaledBitmap(bmp, 100, 100, true);
         ImageView foto = (ImageView) findViewById(R.id.itemUsuarioLayoutFoto);
         foto.setImageBitmap(bmp);
-        //Configuração de click da imagem
-        /*helper.getFoto().setOnClickListener(new View.OnClickListener() {
+
+        ImageView iconeComentar = (ImageView) findViewById(R.id.iconeComentar);
+
+        iconeComentar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                localArquivoFoto = Environment.getExternalStorageDirectory()
-                        + "/" + System.currentTimeMillis() + ".jpg";
-                File arquivo = new File(localArquivoFoto);
-                Uri localFoto = Uri.fromFile(arquivo);
-                Intent irParaCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                irParaCamera.putExtra(MediaStore.EXTRA_OUTPUT, localFoto);
-                startActivityForResult(irParaCamera, FAZER_FOTO_USUARIO);
+                showDialogAlertComentario(usuarioLogin, usuario);
             }
-        });*/
+        });
 
-        /*btSalvar.setOnClickListener(new View.OnClickListener() {
+    }
+
+    private void showDialogAlertComentario(final Usuario comentador,final Usuario comentado){//comentario
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_comentario_usuario_detalhe);
+        dialog.show();
+        dialog.findViewById(R.id.btEnviarComentario).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Usuario usuario = helper.getUsuario();
 
-                UsuarioDAO dao = new UsuarioDAO(UsuarioForm.this);
-                if(usuario.getId()==null){
-                    dao.cadastrar(usuario);
-                }else{
-                    dao.alterar(usuario);
-                }
+                EditText comentarioTxt = (EditText) dialog.findViewById(R.id.edComentario);
+                Comentario comentario = new Comentario();
+
+                comentario.setComentario(comentarioTxt.getText().toString());
+                comentario.setUsuarioComentando(comentador);
+                comentario.setUsuarioComentado(comentado);
+
+                ComentarioDAO dao = new ComentarioDAO(UsuarioDetalheActivity.this);
+                dao.cadastrar(comentario);
+                //List<Comentario> lista = dao.listarComentado(comentado);
+                //for(Comentario coment : lista){
+                    Toast.makeText(UsuarioDetalheActivity.this, "Comentario realizado com successo! "/*+coment.getComentario()*/, Toast.LENGTH_SHORT).show();
                 dao.close();
-                //limpa campos do formulario
-                //helper.setUsuario(new Usuario());
-                //Fecha a tela atual
-                finish();
+                //}
+                dialog.dismiss();
             }
-        });*/
-
+        });
+                //dismiss para sair da tela
+                dialog.show();
     }
 
     @Override
