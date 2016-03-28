@@ -40,7 +40,7 @@
     <string name="site">Site</string>
     <string name="siteHint">www.exemplo.com.br</string>
     <!--<string name="email">Email</string>-->
-    <string name="emailHint">E-mail (Opicional)</string>
+    <string name="emailHint">E-mail (Opcional)</string>
     <string name="endereco">Endereço</string>
     <string name="enderecoHint">rua, número, bairro</string>
 
